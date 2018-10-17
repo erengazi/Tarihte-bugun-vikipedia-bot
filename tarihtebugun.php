@@ -1,7 +1,7 @@
 <html dir="ltr" lang="tr-TR">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Tarihte Bugün</title> 
-<b>Tarihte bugün</b> <br>
+
 <?php 		
 	$aylar = array(
     'January'    =>    'Ocak',
@@ -26,6 +26,7 @@
 ); 
 $TurkceAylar =  strtr(date("j F Y, l"), $aylar);
 	$Aylr =  strtr(date("j_F"), $aylar);
+	echo "<b>Tarihte bugün (".strtr(date("j F"), $aylar).")</b> <br>";
 	$adresx = "http://www.wikizeroo.com/index.php?q=". base64_encode("http://tr.wikipedia.org/wiki/" . $Aylr);
 	$kaynakx = file_get_contents($adresx);
 	for ($say=0;$say<30;$say++) { 
