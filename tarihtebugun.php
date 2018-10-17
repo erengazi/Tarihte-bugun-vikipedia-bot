@@ -1,40 +1,39 @@
 <html dir="ltr" lang="tr-TR">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Tarihte Bugün</title> 
-<base href="http://tr.wikipedia.org/wiki/"/>
-
+<title>Tarihte BugÃ¼n</title> 
+<b>Tarihte bugÃ¼n</b> <br>
 <?php 		
 	$aylar = array(
     'January'    =>    'Ocak',
-    'February'    =>    'Þubat',
+    'February'    =>    'Åžubat',
     'March'        =>    'Mart',
     'April'        =>    'Nisan',
-    'May'        =>    'Mayýs',
+    'May'        =>    'MayÄ±s',
     'June'        =>    'Haziran',
     'July'        =>    'Temmuz',
-    'August'    =>    'Aðustos',
-    'September'    =>    'Eylül',
+    'August'    =>    'AÄŸustos',
+    'September'    =>    'EylÃ¼l',
     'October'    =>    'Ekim',
-    'November'    =>    'Kasým',
-    'December'    =>    'Aralýk',
+    'November'    =>    'KasÄ±m',
+    'December'    =>    'AralÄ±k',
     'Monday'    =>    'Pazartesi',
-    'Tuesday'    =>    'Salý',
-    'Wednesday'    =>    'Çarþamba',
-    'Thursday'    =>    'Perþembe',
+    'Tuesday'    =>    'SalÄ±',
+    'Wednesday'    =>    'Ã‡arÅŸamba',
+    'Thursday'    =>    'PerÅŸembe',
     'Friday'    =>    'Cuma',
     'Saturday'    =>    'Cumartesi',
     'Sunday'    =>    'Pazar',
 ); 
 $TurkceAylar =  strtr(date("j F Y, l"), $aylar);
-
 	$Aylr =  strtr(date("j_F"), $aylar);
-	$adresx = "http://tr.wikipedia.org/wiki/" . $Aylr; 
+	$adresx = "http://www.wikizeroo.com/index.php?q=". base64_encode("http://tr.wikipedia.org/wiki/" . $Aylr);
 	$kaynakx = file_get_contents($adresx);
 	for ($say=0;$say<30;$say++) { 
 	$veribu = '#<li>(.*?)</li>#'; 
-	preg_match_all($veribu,$kaynakx,$verisb); 
+	preg_match_all($veribu,$kaynakx,$verisb);	
 	$bugunx = $verisb[1][$say]; 
-	echo $bugunx .		"<br><br><br>";
+	$bugunx = strip_tags($bugunx,'<table><tr><th><td><span><b><p><h2><h1><h3><i><br><ul><li><strong><dl><ol><dt><div>'); 
+	echo $bugunx .		"<br>";
 	}
 	?>	
 	
