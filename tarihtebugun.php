@@ -27,7 +27,7 @@
 $TurkceAylar =  strtr(date("j F Y, l"), $aylar);
 	$Aylr =  strtr(date("j_F"), $aylar);
 	echo "<b>Tarihte bugün (".strtr(date("j F"), $aylar).")</b> <br>";
-	$adresx = "http://www.wikizeroo.com/index.php?q=". base64_encode("http://tr.wikipedia.org/wiki/" . $Aylr);
+	$adresx = "http://www.wikizero.biz/index.php?q=". base64_encode("http://tr.wikipedia.org/wiki/" . $Aylr);
 	$kaynakx = file_get_contents($adresx);
 	for ($say=0;$say<30;$say++) { 
 	$veribu = '#<li>(.*?)</li>#'; 
