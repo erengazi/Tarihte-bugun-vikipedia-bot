@@ -24,7 +24,7 @@
     'Saturday'    =>    'Cumartesi',
     'Sunday'    =>    'Pazar',
 ); 
-$TurkceAylar =  strtr(date("j F Y, l"), $aylar);
+// $TurkceAylar =  strtr(date("j F Y, l"), $aylar);
 	$Aylr =  strtr(date("j_F"), $aylar);
 	echo "<b>Tarihte bugün (".strtr(date("j F"), $aylar).")</b> <br>";
 	$adresx = "http://www.wikizero.biz/index.php?q=". base64_encode("http://tr.wikipedia.org/wiki/" . $Aylr);
